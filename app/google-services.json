@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "555297264089",
+    "project_id": "readerapp-61495",
+    "storage_bucket": "readerapp-61495.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555297264089:android:6a1eb542de2db4218309c8",
+        "android_client_info": {
+          "package_name": "com.elahee.readerapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlQtJK9NR8--gVq4g65kCe2XtC2ZuHGsU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
