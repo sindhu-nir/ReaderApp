@@ -130,4 +130,11 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-firestore-ktx")
+
+    implementation("androidx.compose.animation:animation:1.7.1")
+    implementation("androidx.compose.runtime:runtime:1.7.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.0")
+    implementation ("androidx.navigation:navigation-compose:2.8.0")
+
+
 }

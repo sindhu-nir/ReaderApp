@@ -6,8 +6,10 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -30,14 +32,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.elahee.readerapp.R
 import com.elahee.readerapp.components.ReaderLogo
 import com.elahee.readerapp.navigation.ReaderScreens
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.delay
 
+
 @Composable
-fun ReaderSplashScreen(navController: NavController){
+fun ReaderSplashScreen(navController: NavController= rememberNavController()) {
     val scale = remember {
         Animatable(0f)
     }
@@ -54,36 +58,39 @@ fun ReaderSplashScreen(navController: NavController){
         delay(2000L)
         if (FirebaseAuth.getInstance().currentUser?.email.isNullOrBlank()) {
             navController.navigate(ReaderScreens.LoginScreen.name)
-        }else{
+        } else {
             navController.navigate(ReaderScreens.ReaderHomeScreen.name)
+            // navController.navigate(ReaderScreens.JetReraderApp.name)
         }
-       // navController.navigate(ReaderScreens.LoginScreen.name)
+        // navController.navigate(ReaderScreens.LoginScreen.name)
 
 
     })
-    Surface(
-        modifier = Modifier
-            .padding(15.dp)
-            .size(330.dp)
-            .scale(scale.value),
-        shape = CircleShape,
-        color = Color.White,
-        border = BorderStroke(2.dp, color = Color.LightGray)
-    ) {
-        Column(
+    Box(modifier = Modifier.fillMaxSize()) {
+        Surface(
             modifier = Modifier
-                .padding(1.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+                .padding(15.dp)
+                .size(330.dp)
+                .scale(scale.value).align(Alignment.Center),
+            shape = CircleShape,
+            color = Color.White,
+            border = BorderStroke(2.dp, color = Color.LightGray)
         ) {
-            ReaderLogo()
-            Spacer(modifier = Modifier.height(5.dp))
-            Text(
-                text = "\"Read, Change. Youreself\"",
-                style = MaterialTheme.typography.headlineSmall,
-                color = Color.LightGray
-            )
+            Column(
+                modifier = Modifier
+                    .padding(1.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                ReaderLogo()
+                Spacer(modifier = Modifier.height(5.dp))
+                Text(
+                    text = "\"Read, Change. Youreself\"",
+                    style = MaterialTheme.typography.headlineSmall,
+                    color = Color.LightGray
+                )
 
+            }
         }
     }
 }

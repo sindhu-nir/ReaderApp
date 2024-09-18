@@ -44,6 +44,7 @@ import coil.compose.rememberImagePainter
 import com.bawp.freader.utils.formatDate
 import com.elahee.readerapp.components.ReaderAppBar
 import com.elahee.readerapp.model.MBook
+import com.elahee.readerapp.navigation.ReaderScreens
 import com.elahee.readerapp.screens.home.HomeScreenViewModel
 import com.google.firebase.auth.FirebaseAuth
 import java.util.Locale
@@ -63,7 +64,7 @@ fun StatsScreen(navController: NavController,
                 icon = Icons.Default.ArrowBack,
                 showProfile = false,
                 navController = navController){
-                navController.popBackStack()
+                navController.navigate(ReaderScreens.ReaderHomeScreen.name)
             }
 
         },

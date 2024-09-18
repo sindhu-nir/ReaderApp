@@ -2,6 +2,7 @@ package com.elahee.readerapp.navigation
 
 enum class ReaderScreens {
     SplashScreen,
+    JetReraderApp,
     LoginScreen,
     CreateAccountScree,
     SearchScreen,
@@ -13,6 +14,7 @@ enum class ReaderScreens {
     companion object{
         fun fromRoute(route:String): ReaderScreens= when(route?.substringBefore("/")){
             SplashScreen.name-> SplashScreen
+            JetReraderApp.name-> JetReraderApp
             LoginScreen.name-> LoginScreen
             CreateAccountScree.name-> CreateAccountScree
             ReaderHomeScreen.name-> ReaderHomeScreen
